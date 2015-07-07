@@ -1,3 +1,37 @@
+# <@ HIOS product >
+# by Hitesh kumar regar 
+# mapping b/w file1,file2,file3 data column 'Vender Sku Code' and 'Product Code'
+# where file1,file2,file3 are pannel file
+# 
+#  |Delhivery Code        | Amazon Code | Flipkart |Jabong |
+#  ---------------------------------------------------------
+#  |process_commmon_code  | xyzpqrstuv  | abcdefgk | hknmuy|
+#
+# if you want to include product_specification in diff diff column 
+#  than comment (#flag) line by adding # in starting of those line
+# how to use 
+#---------------------------Requirements--------------------------
+# 1.Install Python.
+# 2.install xlsxwriter 
+# 3.install Tkinter 
+# ---------------------------Step To Run--------------------------
+# 1.Open Your Command Window
+# 2.Reach The Location Of This file 
+# 3.Run This FIle by using command: python thisfilename.py < eg. Dixcl(json to excel).py > 
+#  GUI window popup(show) 
+# -----------------------
+# | windowname        X |
+# |----------------------
+# | {add file button  } | 
+# | {Create Excel File} |
+# |_____________________|
+# 4.Add all csv file by using Add file button
+# 5.after adding all file use 'Create Excel File' button to create Excel file
+# 6.This Programe convert json data csv file into Excel file like ( if xyz.csv file input than xyz.csv.xcl file output)
+# -----------------------------------------------------------------------------------------------------------------------
+# if any quary contact us (hiteshnitj16@gmail.com )
+#!/usr/bin/env python
+
 import ast
 import xlsxwriter
 import sys
@@ -15,7 +49,7 @@ class  Dixcl:
             sys.setdefaultencoding("utf-8")
             self.workbook = xlsxwriter.Workbook(ofname+'.xlsx')
             self.worksheet = self.workbook.add_worksheet()
-            self.companySKUCode=['ASIN','SUPC','FSN']
+            self.companySKUCode=['ASIN','SUPC','FSN'] # add Here if you another SKU 
 
   def addTosheet(self,dic,r):
           c=0
@@ -35,15 +69,15 @@ class  Dixcl:
                    psd2=lists[0][1]
                    strr=""
                    for a in psd2:
-                    #if a['key'] in self.companySKUCode:
+                    if a['key'] in self.companySKUCode: #flag
                        if a['key'] not in self.keycol:
                            print "new specific key found:",a['key'] 
                            self.keycol[a['key']]=len(self.keycol)
                            self.worksheet.write(0,self.keycol[a['key']],str(a['key']))
                        self.worksheet.write(row,self.keycol[str(a['key'])],a['value'])
-                    #else:
-                      # strr+=str(a['key']+":"+a['value']+",")
-                   #self.worksheet.write(row,self.keycol[str(key)],strr)
+                    else:#flag
+                       strr+=str(a['key']+":"+a['value']+",") #flag
+                    self.worksheet.write(row,self.keycol[str(key)],strr) #flag
               else:
                 self.worksheet.write(row,self.keycol[str(key)],val)
   def makeColumn(self,dic):

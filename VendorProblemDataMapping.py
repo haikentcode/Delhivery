@@ -1,5 +1,5 @@
 # <@ HIOS product >
-# by Haikent
+# by Hitesh kumar regar , Ashok Kumar Bhukhar ( Intern )
 # mapping b/w file1,file2,file3 data column 'Vender Sku Code' and 'Product Code'
 # where file1,file2,file3 are pannel file
 # 
@@ -8,6 +8,7 @@
 #  |process_commmon_code  | xyzpqrstuv  | abcdefgk | hknmuy|
 #
 
+#!/usr/bin/env python
 
 import ast
 import xlsxwriter
