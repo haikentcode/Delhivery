@@ -1,11 +1,9 @@
 # Delhivery
 Intern Work At Delhivery Gurgaon 
-
+''''
 ----------------------------------------Dixcl(json to excel).py-----------------------------
 # <@ HIOS product >
 # by Hitesh kumar regar 
-# mapping b/w file1,file2,file3 data column 'Vender Sku Code' and 'Product Code'
-# where file1,file2,file3 are pannel file
 # 
 #  |Delhivery Code        | Amazon Code | Flipkart |Jabong |
 #  ---------------------------------------------------------
@@ -34,3 +32,5 @@ Intern Work At Delhivery Gurgaon
 # 6.This Programe convert json data csv file into Excel file like ( if xyz.csv file input than xyz.csv.xcl file output)
 # -----------------------------------------------------------------------------------------------------------------------
 # if any quary contact us (hiteshnitj16@gmail.com )
+
+'''''
